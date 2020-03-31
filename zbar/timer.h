@@ -25,7 +25,11 @@
 
 #include <time.h>
 #ifdef HAVE_SYS_TIME_H
+#if _WIN32
+#include <time.h>
+#else
 # include <sys/time.h>   /* gettimeofday */
+#endif
 #endif
 
 /* platform timer abstraction
